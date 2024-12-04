@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="628.0" prefWidth="1255.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Home">
+   <children>
+      <AnchorPane fx:id="sidebar" prefHeight="624.0" prefWidth="227.0" style="-fx-background-color: #1b1b1b;">
+         <children>
+            <Button fx:id="homeBtn" layoutX="9.0" layoutY="108.0" mnemonicParsing="false" onAction="#homeRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Home" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="expensesBtn" layoutX="7.0" layoutY="168.0" mnemonicParsing="false" onAction="#expensesRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Expenses" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="tipsBtn" layoutX="7.0" layoutY="230.0" mnemonicParsing="false" onAction="#tipsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Trips" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="approvalBtn" layoutX="7.0" layoutY="294.0" mnemonicParsing="false" onAction="#approvalRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Approvals" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="settingsBtn" layoutX="7.0" layoutY="368.0" mnemonicParsing="false" onAction="#settingsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Settings" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="supportBtn" layoutX="9.0" layoutY="435.0" mnemonicParsing="false" onAction="#supportRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Support" textFill="#02d0bd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="10.0" layoutY="555.0" prefHeight="54.0" prefWidth="184.0" text="EXPENSIO" textFill="#00dac6">
+               <font>
+                  <Font name="System Italic" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="226.0" layoutY="580.0" prefHeight="48.0" prefWidth="1030.0" style="-fx-background-color: #1b1b1b;" />
+      <AnchorPane layoutX="264.0" layoutY="29.0" prefHeight="200.0" prefWidth="346.0" style="-fx-background-color: #1b1b1b;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="10.0" prefWidth="118.0" text="Pending tasks" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="45.0" prefHeight="19.0" prefWidth="118.0" text="Pendeing aprovals" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="71.0" prefHeight="19.0" prefWidth="125.0" text="New Teps Registered" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="100.0" prefHeight="19.0" prefWidth="126.0" text="Unreported Expenses" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="132.0" prefHeight="19.0" prefWidth="118.0" text="Upcoming Expenses" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="160.0" prefHeight="19.0" prefWidth="126.0" text="Unreported Advances" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="46.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="72.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="101.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="133.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="320.0" layoutY="161.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="644.0" layoutY="29.0" prefHeight="200.0" prefWidth="577.0" style="-fx-background-color: #1b1b1b;">
+         <children>
+            <Label layoutX="21.0" layoutY="6.0" prefHeight="10.0" prefWidth="118.0" text="Recent Expenses" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="39.0" prefHeight="19.0" prefWidth="77.0" text="Subject" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="171.0" layoutY="39.0" prefHeight="19.0" prefWidth="77.0" text="Employee" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="349.0" layoutY="39.0" prefHeight="19.0" prefWidth="46.0" text="Team" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="486.0" layoutY="39.0" prefHeight="19.0" prefWidth="77.0" text="Amount" textFill="#a9a6a6">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="265.0" layoutY="250.0" prefHeight="107.0" prefWidth="957.0" style="-fx-background-color: #1b1b1b;">
+         <children>
+            <AnchorPane layoutX="26.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
+               <children>
+                  <Button fx:id="newExpenseBtn" layoutX="84.0" layoutY="22.0" mnemonicParsing="false" onAction="#newExpenseController" style="-fx-background-color: #28282a;" text="+ New Expense" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Circle fill="#6f2751" layoutX="41.0" layoutY="37.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="719.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
+               <children>
+                  <Button fx:id="addTripBtn" layoutX="84.0" layoutY="22.0" mnemonicParsing="false" onAction="#addTripController" style="-fx-background-color: #28282a;" text="+ Add Trip" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Circle fill="#222255" layoutX="41.0" layoutY="37.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

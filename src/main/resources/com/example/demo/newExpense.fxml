@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="649.0" prefWidth="812.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.NewExpense">
+    <children>
+        <Label layoutX="300.0" layoutY="20.0" text="Create New Expense" textFill="#00dac6">
+            <font>
+                <Font name="System Italic" size="36.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="80.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Subject:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="130.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Merchant:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="180.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Date:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="230.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Total:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="280.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Currency:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="330.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Category:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="380.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Description:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="480.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Employee:" textFill="WHITE" />
+        <Label layoutX="50.0" layoutY="530.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Add to Report:" textFill="WHITE" />
+
+        <TextField fx:id="subjectTxt" layoutX="200.0" layoutY="76.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+        <TextField fx:id="merchantTxt" layoutX="200.0" layoutY="126.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+        <DatePicker fx:id="datePicker" layoutX="200.0" layoutY="176.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-border-color: #00dac6; -fx-border-radius: 5;" />
+        <TextField fx:id="totalTxt" layoutX="200.0" layoutY="226.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+        <ComboBox fx:id="currencyCombo" layoutX="200.0" layoutY="276.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-border-color: #00dac6; -fx-border-radius: 5;" />
+        <ComboBox fx:id="categoryCombo" layoutX="200.0" layoutY="326.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-border-color: #00dac6; -fx-border-radius: 5;" />
+        <TextArea fx:id="descriptionTxt" layoutX="200.0" layoutY="376.0" prefHeight="90.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5; -fx-background-color: #000;" />
+        <TextField fx:id="employeeTxt" layoutX="200.0" layoutY="476.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <HBox layoutX="200.0" layoutY="526.0" spacing="10.0">
+            <children>
+                <RadioButton fx:id="yesRadio" style="-fx-text-fill: white; -fx-font-size: 14px;" text="Yes" />
+                <RadioButton fx:id="noRadio" style="-fx-text-fill: white; -fx-font-size: 14px;" text="No" />
+            </children>
+        </HBox>
+
+        <Button fx:id="submitBtn" layoutX="300.0" layoutY="570.0" onAction="#handleSubmit" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #00dac6; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Submit" />
+      <Button fx:id="backBtn" layoutX="688.0" layoutY="570.0" onAction="#backController" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: #00dac6; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Back" />
+    </children>
+</AnchorPane>
