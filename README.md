@@ -1,98 +1,155 @@
 
-# Expense Tracker Desktop Application
+# Expense Tracker Desktop App
 
-This is a desktop application built using **JavaFX** and **MongoDB** for tracking expenses and managing trips. The application includes features like user authentication, expense management, and trip planning.
+A **JavaFX desktop application** for managing expenses and trips. The app uses **MongoDB** for backend storage, ensuring reliable and scalable data management. This project focuses on user authentication, expense tracking, and trip management, providing a seamless experience for desktop users.
 
-## Features
+---
 
-### General
-- **Login/Register:** Secure user authentication system.
-- **Home Screen:** Easy navigation to different features.
+## **How It Works**
+1. **User Authentication**:
+   - The application starts with a **login screen** where users authenticate using their email and password.
+   - New users can register through the **registration page** by providing a unique username, email, and password.
+   - MongoDB stores user details securely, and validation prevents duplicate accounts.
 
-### Expense Management
-- Add, view, and manage expenses with details such as:
-  - **Subject**
-  - **Merchant**
-  - **Amount**
-  - **Date**
+2. **Expense Tracking**:
+   - After logging in, users can navigate to the **Expenses page** to add, view, and manage their expenses.
+   - Users provide details like subject, merchant, total amount, currency, category, and description.
+   - All expenses are stored in the MongoDB `expenses` collection.
 
-### Trip Planning
-- Create and save trips with the following details:
-  - **Name**
-  - **Purpose**
-  - **Type (Domestic/International)**
-  - **Departure Location**
-  - **Destination**
-  - **Budget**
-  - **Hotel**
+3. **Trip Management**:
+   - The **Trips page** allows users to manage trips by adding details such as name, type, departure, destination, and budget.
+   - Trip data is fetched from the MongoDB `trips` collection and displayed in a table.
 
-### Data Storage
-- All data is stored in a **MongoDB** database, ensuring scalability and reliability.
+4. **Navigation**:
+   - The app includes multiple navigation buttons to switch between pages, including Home, Expenses, Trips, and Settings.
+   - Each page operates independently, fetching and updating data from MongoDB as needed.
 
-## Technology Stack
+5. **Database Operations**:
+   - The application interacts with MongoDB through the `MongoDB Java Driver`, performing CRUD operations for users, expenses, and trips.
+   - Error handling ensures data integrity and provides feedback in case of invalid input or connection issues.
 
-- **Frontend:** JavaFX
-- **Backend:** Java
-- **Database:** MongoDB
-- **Environment Configuration:** `dotenv` for managing sensitive credentials.
+---
 
-## Installation and Setup
+## **Features**
+- **User Registration and Login**:
+  - Register new users with unique credentials.
+  - Login functionality with validation against MongoDB.
+- **Expense Management**:
+  - Add and view expenses with detailed attributes.
+  - Store expenses securely in the MongoDB database.
+- **Trip Management**:
+  - Add and view trips with comprehensive details.
+- **Error Feedback**:
+  - Informative error messages for incorrect inputs or authentication failures.
+- **Navigation**:
+  - Smooth transitions between pages using JavaFX.
+  
+---
 
-1. Clone the repository:
+## **Technologies Used**
+- **Frontend**: JavaFX
+- **Backend**: MongoDB
+- **Language**: Java
+- **Database Connection**: MongoDB Java Driver
+- **Environment Variables**: `.env` for MongoDB configuration
+- **Build Tool**: Maven (or Gradle, if used)
+
+---
+
+## **Setup and Installation**
+
+### Prerequisites
+1. **Java Development Kit (JDK)**: Version 8 or later.
+2. **MongoDB**: Ensure MongoDB is installed and running locally or on a cloud service.
+3. **JavaFX SDK**: Download and configure JavaFX for your IDE.
+4. **Maven/Gradle**: Installed for managing dependencies.
+5. **Environment Variables**: `.env` file for secure MongoDB connection.
+
+### Steps
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/expense-tracker-desktop.git
+   git clone https://github.com/your-repo/expense-tracker.git
+   cd expense-tracker
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd expense-tracker-desktop
-   ```
-3. Set up your environment variables:
-   - Create a `.env` file in the `src/main/resources` directory.
-   - Add the following variables:
+2. **Create a `.env` File**
+   - Place the `.env` file in the project root.
+   - Define your MongoDB connection details:
      ```
-     MONGO_URI=<Your MongoDB Connection String>
+     MONGO_URI=mongodb://localhost:27017
+     DATABASE_NAME=expense-tracker-desktop
      ```
-4. Run the application:
-   - Use your preferred Java IDE (e.g., IntelliJ IDEA or Eclipse) to build and run the project.
+   - Use environment variable libraries like `dotenv-java` to read these variables in your Java code.
 
-## Project Structure
+3. **Configure MongoDB**
+   - Create a database named `expense-tracker-desktop`.
+   - Create the following collections:
+     - `users`
+     - `expenses`
+     - `trips`
 
-```
-src/main/java/com/example/demo/
-├── AddTrip.java          # Controller for adding trips
-├── DB.java               # Database connection and operations
-├── Expense.java          # Expense model
-├── Expenses.java         # Controller for managing expenses
-├── HelloApplication.java # Main application entry point
-├── Home.java             # Controller for the home screen
-├── Login.java            # Controller for login
-└── Trip.java             # Trip model
-```
+4. **Run the Application**
+   - Open the project in your IDE.
+   - Build the project to resolve dependencies.
+   - Run the `HelloApplication.java` file to start the app.
 
-## How to Use
+---
 
-1. **Login/Register:**
-   - Use the login screen to register as a new user or log in with existing credentials.
+## **Database Structure**
 
-2. **Expense Management:**
-   - Navigate to the "Expenses" section to add, view, and manage your expenses.
+### **Environment Variables**
+| Variable        | Description                       |
+|------------------|-----------------------------------|
+| `MONGO_URI`      | Connection string for MongoDB.   |
+| `DATABASE_NAME`  | Name of the database to use.     |
 
-3. **Trip Planning:**
-   - Go to the "Add Trip" section to plan and save details about your trips.
+### **Collections**
+#### Users Collection
+| Field       | Type   | Description               |
+|-------------|--------|---------------------------|
+| `username`  | String | User's unique username.   |
+| `email`     | String | User's unique email.      |
+| `password`  | String | Hashed password.          |
 
-## Contributing
+#### Expenses Collection
+| Field         | Type    | Description                           |
+|---------------|---------|---------------------------------------|
+| `subject`     | String  | Subject of the expense.              |
+| `merchant`    | String  | Name of the merchant.                |
+| `date`        | String  | Date of the expense.                 |
+| `total`       | Double  | Total expense amount.                |
+| `currency`    | String  | Currency type (e.g., USD, EGP).      |
+| `category`    | String  | Category (e.g., Food, Travel).       |
+| `description` | String  | Additional description (optional).   |
+| `employee`    | String  | Employee linked to the expense.      |
+| `addToReport` | Boolean | Whether it's added to a report.      |
 
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`feature/your-feature`).
-3. Commit your changes.
-4. Push to the branch.
-5. Create a pull request.
+#### Trips Collection
+| Field       | Type   | Description                    |
+|-------------|--------|--------------------------------|
+| `name`      | String | Name of the trip.             |
+| `type`      | String | Business or Leisure.          |
+| `departFrom`| String | Departure location.           |
+| `destination`| String | Trip destination.             |
 
-## License
+---
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## **How to Contribute**
+- Fork the repository.
+- Create a feature branch:
+  ```bash
+  git checkout -b feature-name
+  ```
+- Commit your changes:
+  ```bash
+  git commit -m "Description of feature"
+  ```
+- Push the branch and create a pull request.
 
-## Contact
+---
 
-For any questions or feedback, feel free to reach out at **your-email@example.com**.
+## **Future Enhancements**
+- Add data export (PDF, CSV).
+- Graphical insights for expenses and trips.
+- Support for multiple currencies with exchange rates.
+- Role-based access (e.g., admin, user).
+
