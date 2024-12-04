@@ -27,6 +27,8 @@ public class Expenses {
     public Button supportBtn;
     public Button newExpenseBtn;
     public Button addReceiptBtn;
+
+
     @FXML
     private TableView<Expense> expensesTable;
 
@@ -54,7 +56,7 @@ public class Expenses {
     }
 
     public void expensesRouter(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("expenses.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
         Stage stage = (Stage) expensesBtn.getScene().getWindow();
 
@@ -63,7 +65,7 @@ public class Expenses {
     }
 
     public void tipsRouter(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("trips.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
         Stage stage = (Stage) tipsBtn.getScene().getWindow();
 

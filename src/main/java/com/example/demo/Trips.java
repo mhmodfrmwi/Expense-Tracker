@@ -1,9 +1,7 @@
 package com.example.demo;
 
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,72 +9,73 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.bson.Document;
 
 import java.io.IOException;
 
-public class Home {
+public class Trips {
     public Button homeBtn;
     public Button expensesBtn;
     public Button tipsBtn;
     public Button approvalBtn;
     public Button settingsBtn;
     public Button supportBtn;
-    public Button newExpenseBtn;
     public Button addTripBtn;
-    public TableColumn subjectColumn;
-    public TableColumn merchantColumn;
-    public TableColumn totalColumn;
-    public TableColumn dateColumn;
-    public Label tripsCount;
-    public Label expensesCount;
     @FXML
-    private TableView<Expense> recentExpensesTable;
+    private TableView<Trip> tripsTable;
+
     @FXML
-    private AnchorPane recentExpensesPane;
+    private TableColumn<Trip, String> nameColumn;
+    @FXML
+    private TableColumn<Trip, String> typeColumn;
+    @FXML
+    private TableColumn<Trip, String> departFromColumn;
+    @FXML
+    private TableColumn<Trip, String> destinationColumn;
+
+    @FXML
+    private Button addTripButton;
+
+    @FXML
     public void initialize() {
-        subjectColumn.setCellValueFactory(new PropertyValueFactory<>("subject"));
-        merchantColumn.setCellValueFactory(new PropertyValueFactory<>("merchant"));
-        totalColumn.setCellValueFactory(new PropertyValueFactory<>("amount"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
-        tripsCount.setText(String.valueOf((DB.getDatabase("expense-tracker-desktop").getCollection("trips").countDocuments())));
-        expensesCount.setText(String.valueOf((DB.getDatabase("expense-tracker-desktop").getCollection("expenses").countDocuments())));
-        fetchRecentExpenses();
+        // Initialize columns with properties
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        departFromColumn.setCellValueFactory(new PropertyValueFactory<>("departFrom"));
+        destinationColumn.setCellValueFactory(new PropertyValueFactory<>("destination"));
+
+        // Example data setup
+        fetchTrips();
     }
-    @FXML
-    private void fetchRecentExpenses() {
-        ObservableList<Expense> recentExpenses = FXCollections.observableArrayList();
+    private void fetchTrips() {
+        ObservableList<Trip> trips = FXCollections.observableArrayList();
 
         try {
-            MongoCollection<Document> collection = DB.getDatabase("expense-tracker-desktop").getCollection("expenses");
-
+            MongoCollection<Document> collection = DB.getDatabase("expense-tracker-desktop").getCollection("trips");
             MongoCursor<Document> cursor = collection.find().iterator();
 
             while (cursor.hasNext()) {
                 Document doc = cursor.next();
-                String subject = doc.getString("subject");
-                String merchant = doc.getString("merchant");
-                double total = doc.getDouble("total");
-                String date = doc.getString("date");
+                String name = doc.getString("name");
+                String type = doc.getString("type");
+                String departFrom = doc.getString("departFrom");
+                String destination = doc.getString("destination");
 
-                recentExpenses.add(new Expense(subject, merchant, total, date));
+                trips.add(new Trip(name,type,departFrom,destination));
             }
 
             cursor.close();
-
         } catch (Exception e) {
-            System.err.println("Error fetching recent expenses: " + e.getMessage());
+            System.err.println("Error fetching expenses: " + e.getMessage());
         }
-        recentExpensesTable.setItems(recentExpenses);
+
+        tripsTable.setItems(trips);
+
     }
-
-
     public void homeRouter(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
@@ -100,7 +99,7 @@ public class Home {
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
         Stage stage = (Stage) tipsBtn.getScene().getWindow();
 
-        stage.setTitle("Trips!");
+        stage.setTitle("Tips!");
         stage.setScene(scene);
     }
 
@@ -131,16 +130,7 @@ public class Home {
         stage.setScene(scene);
     }
 
-    public void newExpenseController(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("newExpense.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
-        Stage stage = (Stage) newExpenseBtn.getScene().getWindow();
-
-        stage.setTitle("New Expense!");
-        stage.setScene(scene);
-    }
-
-    public void addTripController(ActionEvent actionEvent) throws IOException {
+    public void handleAddTrip(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addTrip.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
         Stage stage = (Stage) addTripBtn.getScene().getWindow();

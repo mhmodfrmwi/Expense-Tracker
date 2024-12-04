@@ -8,7 +8,12 @@ public class Trip {
     private String destination;
     private String budget;
     private String hotel;
-
+    public Trip(String name, String type,String departFrom,String destination){
+        this.name = name;
+        this.type = type;
+        this.departFrom = departFrom;
+        this.destination = destination;
+    }
     public Trip(String name, String type, String purpose,
                 String departFrom, String destination, String budget,
                 String hotel) {
@@ -20,7 +25,6 @@ public class Trip {
         this.budget = budget;
         this.hotel = hotel;
     }
-
     public Trip() {}
 
     public String getName() {

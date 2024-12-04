@@ -45,7 +45,7 @@
                 </Label>
             </children>
         </AnchorPane>
-      <Label layoutX="268.0" layoutY="34.0" prefHeight="47.0" prefWidth="144.0" text="Expenses" textFill="WHITE">
+      <Label layoutX="268.0" layoutY="34.0" prefHeight="47.0" prefWidth="144.0" text="Expenses" textFill="#00dac6">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>

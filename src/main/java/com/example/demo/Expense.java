@@ -19,6 +19,7 @@ public class Expense {
     public String getMerchant() { return merchant; }
     public double getAmount() { return amount; }
     public String getDate() { return date; }
+
 }
 
 

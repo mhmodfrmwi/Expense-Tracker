@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="817.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Trips">
+    <AnchorPane fx:id="sidebar" prefHeight="624.0" prefWidth="227.0" style="-fx-background-color: #1b1b1b;">
+        <children>
+            <Button fx:id="homeBtn" layoutX="9.0" layoutY="108.0" mnemonicParsing="false" onAction="#homeRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Home" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="expensesBtn" layoutX="7.0" layoutY="168.0" mnemonicParsing="false" onAction="#expensesRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Expenses" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="tipsBtn" layoutX="7.0" layoutY="230.0" mnemonicParsing="false" onAction="#tipsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Trips" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="approvalBtn" layoutX="7.0" layoutY="294.0" mnemonicParsing="false" onAction="#approvalRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Approvals" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="settingsBtn" layoutX="7.0" layoutY="368.0" mnemonicParsing="false" onAction="#settingsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Settings" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Button fx:id="supportBtn" layoutX="9.0" layoutY="435.0" mnemonicParsing="false" onAction="#supportRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Support" textFill="#02d0bd">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Button>
+            <Label layoutX="10.0" layoutY="555.0" prefHeight="54.0" prefWidth="184.0" text="EXPENSIO" textFill="#00dac6">
+                <font>
+                    <Font name="System Italic" size="36.0" />
+                </font>
+            </Label>
+        </children>
+    </AnchorPane>
+
+    <VBox alignment="CENTER" layoutX="303.0" layoutY="48.0" prefHeight="300.0" prefWidth="500.0" spacing="15">
+        <TableView fx:id="tripsTable" prefHeight="200" prefWidth="500">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="120" text="Name" />
+                <TableColumn fx:id="typeColumn" prefWidth="100" text="Type" />
+                <TableColumn fx:id="departFromColumn" prefWidth="120" text="Depart From" />
+                <TableColumn fx:id="destinationColumn" prefWidth="120" text="Destination" />
+            </columns>
+        </TableView>
+        <Button fx:id="addTripBtn" onAction="#handleAddTrip" text="Add Trip" />
+    </VBox>
+     <Label layoutX="298.0" layoutY="30.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Trips Page" textFill="#00dac6" />
+
+</AnchorPane>
