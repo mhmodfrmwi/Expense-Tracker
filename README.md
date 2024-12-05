@@ -1,7 +1,6 @@
-
 # Expense Tracker Desktop App
 
-A **JavaFX desktop application** for managing expenses and trips. The app uses **MongoDB** for backend storage, ensuring reliable and scalable data management. This project focuses on user authentication, expense tracking, and trip management, providing a seamless experience for desktop users.
+A **JavaFX desktop application** for managing expenses and trips. The app uses **MongoDB** for backend storage, ensuring reliable and scalable data management. This project focuses on user authentication, expense tracking, report generation, and trip management, providing a seamless experience for desktop users.
 
 ---
 
@@ -20,12 +19,17 @@ A **JavaFX desktop application** for managing expenses and trips. The app uses *
    - The **Trips page** allows users to manage trips by adding details such as name, type, departure, destination, and budget.
    - Trip data is fetched from the MongoDB `trips` collection and displayed in a table.
 
-4. **Navigation**:
-   - The app includes multiple navigation buttons to switch between pages, including Home, Expenses, Trips, and Settings.
+4. **Report Generation and Saving**:
+   - The **Reports page** allows users to create and save detailed reports with attributes like title, author, summary, content, and tags.
+   - Reports are stored in the MongoDB `reports` collection and can be retrieved and managed later.
+   - Provides functionality to display saved reports, ensuring organized record-keeping.
+
+5. **Navigation**:
+   - The app includes multiple navigation buttons to switch between pages, including Home, Expenses, Trips, Reports, and Settings.
    - Each page operates independently, fetching and updating data from MongoDB as needed.
 
-5. **Database Operations**:
-   - The application interacts with MongoDB through the `MongoDB Java Driver`, performing CRUD operations for users, expenses, and trips.
+6. **Database Operations**:
+   - The application interacts with MongoDB through the `MongoDB Java Driver`, performing CRUD operations for users, expenses, trips, and reports.
    - Error handling ensures data integrity and provides feedback in case of invalid input or connection issues.
 
 ---
@@ -39,6 +43,10 @@ A **JavaFX desktop application** for managing expenses and trips. The app uses *
   - Store expenses securely in the MongoDB database.
 - **Trip Management**:
   - Add and view trips with comprehensive details.
+- **Report Generation and Saving**:
+  - Create and save detailed reports.
+  - Add information such as title, author, summary, content, and tags.
+  - Reports are stored securely in MongoDB.
 - **Error Feedback**:
   - Informative error messages for incorrect inputs or authentication failures.
 - **Navigation**:
@@ -86,6 +94,7 @@ A **JavaFX desktop application** for managing expenses and trips. The app uses *
      - `users`
      - `expenses`
      - `trips`
+     - `reports` (new collection for storing reports)
 
 4. **Run the Application**
    - Open the project in your IDE.
@@ -131,6 +140,16 @@ A **JavaFX desktop application** for managing expenses and trips. The app uses *
 | `departFrom`| String | Departure location.           |
 | `destination`| String | Trip destination.             |
 
+#### Reports Collection
+| Field       | Type   | Description                             |
+|-------------|--------|-----------------------------------------|
+| `title`     | String | Title of the report.                    |
+| `author`    | String | Author of the report.                  |
+| `date`      | Date   | Date the report was created.           |
+| `summary`   | String | Summary of the report.                 |
+| `content`   | String | Full content of the report.            |
+| `tags`      | String | Tags associated with the report.       |
+
 ---
 
 ## **How to Contribute**
@@ -152,4 +171,7 @@ A **JavaFX desktop application** for managing expenses and trips. The app uses *
 - Graphical insights for expenses and trips.
 - Support for multiple currencies with exchange rates.
 - Role-based access (e.g., admin, user).
+- Integrate a report viewing and sharing feature.
+- Implement report editing and deletion functionality.
 
+---
