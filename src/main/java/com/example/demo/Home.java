@@ -36,6 +36,8 @@ public class Home {
     public TableColumn dateColumn;
     public Label tripsCount;
     public Label expensesCount;
+    public Button addReportBtn;
+    public Button addReceipt;
     @FXML
     private TableView<Expense> recentExpensesTable;
     @FXML
@@ -146,6 +148,24 @@ public class Home {
         Stage stage = (Stage) addTripBtn.getScene().getWindow();
 
         stage.setTitle("Add Trip!");
+        stage.setScene(scene);
+    }
+
+    public void addReportController(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addReport.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
+        Stage stage = (Stage) addReportBtn.getScene().getWindow();
+
+        stage.setTitle("Add Report!");
+        stage.setScene(scene);
+    }
+
+    public void addReceiptController(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addReceipt.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
+        Stage stage = (Stage) addReceipt.getScene().getWindow();
+
+        stage.setTitle("Add Receipt!");
         stage.setScene(scene);
     }
 }

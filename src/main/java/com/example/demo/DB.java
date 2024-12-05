@@ -48,4 +48,46 @@ public class DB {
         }
 
     }
+
+    public static void saveReceipt(Receipt receipt) {
+        try (MongoClient mongoClient = MongoClients.create(CONNECTION_STRING)) {
+            MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
+            MongoCollection<Document> collection = database.getCollection("receipts");
+
+            Document receiptDoc = new Document()
+                    .append("receiptNumber", receipt.getReceiptNumber())
+                    .append("businessAddress", receipt.getBusinessAddress())
+                    .append("customerName", receipt.getCustomerName())
+                    .append("customerPhone", receipt.getCustomerPhone())
+                    .append("employeeName", receipt.getEmployeeName())
+                    .append("referenceNumber", receipt.getReferenceNumber())
+                    .append("merchant", receipt.getMerchant());
+
+            collection.insertOne(receiptDoc);
+
+            System.out.println("Receipt saved successfully: " + receipt);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void saveReport(Report report) {
+        try (MongoClient mongoClient = MongoClients.create(CONNECTION_STRING)) {
+            MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
+            MongoCollection<Document> collection = database.getCollection("reports");
+
+            Document reportDoc = new Document()
+                    .append("title", report.getTitle())
+                    .append("author", report.getAuthor())
+                    .append("date", report.getDate().toString())
+                    .append("summary", report.getSummary())
+                    .append("content", report.getContent())
+                    .append("tags", report.getTags());
+
+            collection.insertOne(reportDoc);
+
+            System.out.println("Report saved successfully: " + report);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

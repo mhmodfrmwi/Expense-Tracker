@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="662.0" prefWidth="912.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AddReport">
+    <children>
+        <Label layoutX="300.0" layoutY="20.0" text="Create New Report" textFill="#00dac6">
+            <font>
+                <Font name="System Italic" size="36.0" />
+            </font>
+        </Label>
+
+        <!-- General Information -->
+        <Label layoutX="50.0" layoutY="80.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="General Information" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="120.0" style="-fx-font-size: 16px;" text="Report Title:" textFill="WHITE" />
+        <TextField fx:id="reportTitleField" layoutX="300.0" layoutY="117.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="170.0" style="-fx-font-size: 16px;" text="Author:" textFill="WHITE" />
+        <TextField fx:id="authorField" layoutX="300.0" layoutY="167.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <!-- Report Details -->
+        <Label layoutX="50.0" layoutY="270.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Report Details" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="310.0" style="-fx-font-size: 16px;" text="Summary:" textFill="WHITE" />
+        <TextField fx:id="summaryField" layoutX="300.0" layoutY="307.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="360.0" style="-fx-font-size: 16px;" text="Content:" textFill="WHITE" />
+        <TextArea fx:id="contentField" layoutX="300.0" layoutY="357.0" prefHeight="100.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: #000; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <!-- Footer -->
+        <Label layoutX="50.0" layoutY="480.0" style="-fx-font-size: 16px;" text="Tags (optional):" textFill="WHITE" />
+        <TextField fx:id="tagsField" layoutX="300.0" layoutY="477.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <!-- Buttons -->
+        <Button fx:id="saveDraftButton" layoutX="300.0" layoutY="570.0" onAction="#handleSaveDraft" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #00dac6; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Save Draft" />
+
+        <Button fx:id="saveButton" layoutX="500.0" layoutY="570.0" onAction="#handleSave" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-text-fill: #00dac6; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Save" />
+
+        <Button fx:id="backButton" layoutX="702.0" layoutY="570.0" onAction="#handleBack" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-text-fill: #00dac6; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Back" />
+    </children>
+</AnchorPane>

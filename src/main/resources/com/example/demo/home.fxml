@@ -154,9 +154,29 @@
                   <Circle fill="#6f2751" layoutX="41.0" layoutY="37.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="719.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
+            <AnchorPane layoutX="252.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
                <children>
                   <Button fx:id="addTripBtn" layoutX="84.0" layoutY="22.0" mnemonicParsing="false" onAction="#addTripController" style="-fx-background-color: #28282a;" text="+ Add Trip" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Circle fill="#222255" layoutX="41.0" layoutY="37.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="479.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
+               <children>
+                  <Button fx:id="addReportBtn" layoutX="68.0" layoutY="22.0" mnemonicParsing="false" onAction="#addReportController" style="-fx-background-color: #28282a;" text="+ Create Report" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Circle fill="#222255" layoutX="41.0" layoutY="37.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="705.0" layoutY="16.0" prefHeight="74.0" prefWidth="208.0" style="-fx-background-color: #28282a;">
+               <children>
+                  <Button fx:id="addReceipt" layoutX="84.0" layoutY="22.0" mnemonicParsing="false" onAction="#addReceiptController" style="-fx-background-color: #28282a;" text="+ Add Receipt" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

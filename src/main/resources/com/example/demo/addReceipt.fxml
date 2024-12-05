@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="665.0" prefWidth="883.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.AddReceipt">
+    <children>
+        <Label layoutX="300.0" layoutY="20.0" text="Create New Receipt" textFill="#00dac6">
+            <font>
+                <Font name="System Italic" size="36.0" />
+            </font>
+        </Label>
+
+        <Label layoutX="50.0" layoutY="80.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="General Information" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="120.0" style="-fx-font-size: 16px;" text="Receipt Number:" textFill="WHITE" />
+        <TextField fx:id="recieptNumberField" layoutX="300.0" layoutY="117.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="170.0" style="-fx-font-size: 16px;" text="Merchant:" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="220.0" style="-fx-font-size: 16px;" text="Business Address:" textFill="WHITE" />
+        <TextField fx:id="businessAddressField" layoutX="300.0" layoutY="217.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="270.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Payer:" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="310.0" style="-fx-font-size: 16px;" text="Customer Name:" textFill="WHITE" />
+        <TextField fx:id="customerNameField" layoutX="294.0" layoutY="307.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="360.0" style="-fx-font-size: 16px;" text="Customer Phone:" textFill="WHITE" />
+        <TextField fx:id="customerPhoneField" layoutX="294.0" layoutY="357.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="410.0" style="-fx-font-size: 16px;" text="Employee/Staff Name:" textFill="WHITE" />
+        <TextField fx:id="employeeNameField" layoutX="294.0" layoutY="407.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Label layoutX="50.0" layoutY="460.0" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Additional Fields" textFill="WHITE" />
+
+        <Label layoutX="50.0" layoutY="500.0" style="-fx-font-size: 16px;" text="Reference Number::" textFill="WHITE" />
+        <TextField fx:id="refrenceNumberField" layoutX="294.0" layoutY="497.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+
+        <Button fx:id="saveDraftButton" layoutX="300.0" layoutY="570.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #00dac6; -fx-text-fill: white; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Save Draft" />
+
+        <Button fx:id="saveButton" layoutX="500.0" layoutY="570.0" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-text-fill: #00dac6; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Save" />
+      <TextField fx:id="merchentField" layoutX="300.0" layoutY="167.0" prefWidth="500.0" style="-fx-background-color: #222; -fx-text-fill: white; -fx-border-color: #00dac6; -fx-border-radius: 5; -fx-padding: 5;" />
+      <Button fx:id="back" layoutX="702.0" layoutY="570.0" onAction="#Back" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ffffff; -fx-text-fill: #00dac6; -fx-font-size: 14px; -fx-border-radius: 8; -fx-background-radius: 8;" text="Back" />
+    </children>
+</AnchorPane>
