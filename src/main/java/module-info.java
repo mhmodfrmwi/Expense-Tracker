@@ -5,6 +5,7 @@ module com.example.demo {
     requires org.mongodb.bson;
     requires org.mongodb.driver.core;
     requires java.dotenv;
+    requires org.slf4j;
 
 
     opens com.example.demo to javafx.fxml;

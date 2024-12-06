@@ -107,11 +107,11 @@ public class Home {
     }
 
     public void approvalRouter(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("reports.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1250, 620);
         Stage stage = (Stage) approvalBtn.getScene().getWindow();
 
-        stage.setTitle("Approvals!");
+        stage.setTitle("Reports!");
         stage.setScene(scene);
     }
 

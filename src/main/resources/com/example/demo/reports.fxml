@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="624.0" prefWidth="1024.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Reports">
+    <children>
+        <AnchorPane fx:id="sidebar" prefHeight="624.0" prefWidth="227.0" style="-fx-background-color: #1b1b1b;">
+            <children>
+                <Button fx:id="homeBtn" layoutX="9.0" layoutY="108.0" mnemonicParsing="false" onAction="#homeRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Home" textFill="#02d0bd">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="expensesBtn" layoutX="7.0" layoutY="168.0" mnemonicParsing="false" onAction="#expensesRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Expenses" textFill="#02d0bd">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="reportsBtn" layoutX="7.0" layoutY="230.0" mnemonicParsing="false" onAction="#reportsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Reports" textFill="#02d0bd">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="settingsBtn" layoutX="7.0" layoutY="294.0" mnemonicParsing="false" onAction="#settingsRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Settings" textFill="#02d0bd">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="10.0" layoutY="555.0" prefHeight="54.0" prefWidth="184.0" text="EXPENSIO" textFill="#00dac6">
+                    <font>
+                        <Font name="System Italic" size="36.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="268.0" layoutY="34.0" prefHeight="47.0" prefWidth="144.0" text="Reports" textFill="#00dac6">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Label>
+        <AnchorPane layoutX="268.0" layoutY="112.0" prefHeight="400.0" prefWidth="740.0" style="-fx-background-color: #000;">
+            <children>
+                <TableView fx:id="reportsTable" layoutX="50.0" layoutY="36.0" prefHeight="300.0" prefWidth="675.0" style="-fx-background-color: #222; -fx-border-color: #00dac6; -fx-border-radius: 5;">
+                    <columns>
+                        <TableColumn fx:id="titleColumn" prefWidth="150.0" text="Title" />
+                        <TableColumn fx:id="authorColumn" prefWidth="120.0" text="Author" />
+                        <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Date" />
+                        <TableColumn fx:id="summaryColumn" prefWidth="200.0" text="Summary" />
+                        <TableColumn fx:id="tagsColumn" prefWidth="100.0" text="Tags" />
+                    </columns>
+                </TableView>
+                <Button fx:id="refreshButton" layoutX="360.0" layoutY="360.0" onAction="#fetchReports" text="Refresh" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

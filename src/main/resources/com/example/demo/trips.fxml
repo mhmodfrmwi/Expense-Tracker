@@ -22,7 +22,7 @@
                     <Font name="System Bold" size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="approvalBtn" layoutX="7.0" layoutY="294.0" mnemonicParsing="false" onAction="#approvalRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Approvals" textFill="#02d0bd">
+            <Button fx:id="approvalBtn" layoutX="7.0" layoutY="294.0" mnemonicParsing="false" onAction="#approvalRouter" prefHeight="36.0" prefWidth="186.0" style="-fx-background-color: #28282a;" text="Reports" textFill="#02d0bd">
                 <font>
                     <Font name="System Bold" size="14.0" />
                 </font>

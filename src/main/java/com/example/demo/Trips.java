@@ -42,13 +42,11 @@ public class Trips {
 
     @FXML
     public void initialize() {
-        // Initialize columns with properties
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
         departFromColumn.setCellValueFactory(new PropertyValueFactory<>("departFrom"));
         destinationColumn.setCellValueFactory(new PropertyValueFactory<>("destination"));
 
-        // Example data setup
         fetchTrips();
     }
     private void fetchTrips() {
